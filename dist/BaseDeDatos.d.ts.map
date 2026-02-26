@@ -1,0 +1,1 @@
+{"version":3,"file":"BaseDeDatos.d.ts","sourceRoot":"","sources":["../src/BaseDeDatos.ts"],"names":[],"mappings":"AAEA,qBAAa,WAAW;IAEpB,OAAO,CAAC,MAAM,CAAC,SAAS,CAA4B;IAGpD,OAAO,CAAC,UAAU,CAGhB;IAGF,OAAO;IAKP,MAAM,CAAC,gBAAgB,IAAI,WAAW;IAStC,QAAQ,CAAC,UAAU,EAAE,MAAM,GAAG,IAAI;IAOlC,cAAc,CAAC,UAAU,EAAE,MAAM,GAAG,IAAI;CAS3C"}

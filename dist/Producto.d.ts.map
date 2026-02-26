@@ -1,0 +1,1 @@
+{"version":3,"file":"Producto.d.ts","sourceRoot":"","sources":["../src/Producto.ts"],"names":[],"mappings":"AAAA,qBAAa,QAAQ;IAEN,EAAE,EAAE,MAAM;IACV,MAAM,EAAE,MAAM;IACd,KAAK,EAAE,MAAM;gBAFb,EAAE,EAAE,MAAM,EACV,MAAM,EAAE,MAAM,EACd,KAAK,EAAE,MAAM;CAE3B"}
