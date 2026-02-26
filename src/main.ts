@@ -1,31 +1,30 @@
 import { BaseDeDatos } from "./BaseDeDatos";
 
-console.log(" BIENVENIDOS A LICORERÍA EL BARRIL \n");
+console.log("\n=== INICIANDO SISTEMA DE VENTAS ===");
 
-// 1. Se conecta el módulo de la Tienda Web
-console.log(" Modulo Web conectándose...");
-const conexionWeb = BaseDeDatos.obtenerInstancia();
+const pcCajero1 = BaseDeDatos.obtenerInstancia();
+const pcCajero2 = BaseDeDatos.obtenerInstancia();
+const pcGerencia = BaseDeDatos.obtenerInstancia();
 
-// 2. Se conecta el módulo de la Caja Física
-console.log(" Modulo Caja conectándose...");
-const conexionCaja = BaseDeDatos.obtenerInstancia();
+console.log(`[VERIFICACIÓN] ¿pcCajero1 y pcGerencia comparten memoria?: ${pcCajero1 === pcGerencia}\n`);
 
-// COMPROBACIÓN FÍSICA: ¿Son exactamente la misma conexión?
-console.log(`\n¿Ambos módulos usan la misma conexión? ${conexionWeb === conexionCaja}`);
+// ESTADO INICIAL
+console.log("--- CONSULTA DE PRECIOS (TASA OFICIAL) ---");
+pcCajero1.mostrarPrecioEnDolares(6);
 
-// LA HISTORIA EN ACCIÓN:
-// La web revisa el stock y ve que queda 1 Whisky
-console.log(" Cliente en la Web revisa el stock:");
-conexionWeb.verStock(1);
+// ACTUALIZACIÓN GLOBAL
+console.log("\n--- ACTUALIZACIÓN DE SISTEMA ---");
+pcGerencia.actualizarTasaCambio(7.50);
 
-// La web lo compra y baja el stock
-console.log("\n Cliente en la Web hace la compra:");
-conexionWeb.venderProducto(1);
+console.log("\n--- NUEVA CONSULTA DE PRECIOS ---");
+pcCajero2.mostrarPrecioEnDolares(6);
 
-// Inmediatamente después, el cajero en la tienda física intenta vender el mismo Whisky
-console.log("\n Cliente en la tienda fisica pide el mismo Whisky.");
-console.log(" El cajero intenta procesar la venta:");
-conexionCaja.venderProducto(1); 
+// TRANSACCIONES 
+console.log("\n--- REGISTRANDO TRANSACCIONES ---");
+pcCajero1.venderProducto(1, "Caja 1"); 
+pcCajero2.venderProducto(10, "Caja 2"); 
+pcCajero1.venderProducto(6, "Caja 1"); 
 
-console.log("\n Stock final consultado por el cajero:");
-conexionCaja.verStock(1);
+
+// AUDITORÍA 
+pcGerencia.mostrarHistorial();
